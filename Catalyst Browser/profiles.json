@@ -1,0 +1,20 @@
+{
+  "moh" : {
+    "username" : "moh",
+    "theme" : "Light",
+    "homepage" : "https://www.google.com",
+    "searchEngine" : "Google",
+    "cookiesEnabled" : true,
+    "trackingProtection" : true,
+    "fontSize" : 18,
+    "bookmarks" : [ ],
+    "pinnedTabs" : [ {
+      "name" : "Google",
+      "url" : "https://www.google.com/"
+    }, {
+      "name" : "YouTube",
+      "url" : "https://www.youtube.com/"
+    } ],
+    "darkMode" : false
+  }
+}

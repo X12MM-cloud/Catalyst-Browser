@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.input.MouseEvent?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.zetax.zetabrowser.HelloController"
+            stylesheets="@style.css">
+    
+    <!-- Top Bar -->
+    <top>
+        <HBox fx:id="topBar" styleClass="custom-title-bar" spacing="15" alignment="CENTER_LEFT">
+            <StackPane styleClass="logo-container">
+                <ImageView fx:id="appLogo" fitHeight="32" fitWidth="32" pickOnBounds="true" preserveRatio="true">
+                    <HBox.margin>
+                        <Insets left="15" top="10" right="5" bottom="10"/>
+                    </HBox.margin>
+                    <image>
+                        <Image url="@logo.png"/>
+                    </image>
+                </ImageView>
+            </StackPane>
+            
+            <!-- Fix the settings button - remove the commented versions and keep only one proper button -->
+            <Button fx:id="settingsButton" styleClass="settings-button" text="Sett" onAction="#showSettingsMenu">
+                <HBox.margin>
+                    <Insets top="9" bottom="9"/>
+                </HBox.margin>
+            </Button>
+            
+            <Region HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets left="10" right="10"/>
+                </HBox.margin>
+            </Region>
+            <HBox spacing="5" alignment="CENTER" styleClass="nav-buttons-container">
+                <Button fx:id="navButtonBack" styleClass="nav-button" text="←" onAction="#goBack">
+                    <HBox.margin>
+                        <Insets top="9" bottom="9"/>
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="navButtonForward" styleClass="nav-button" text="→" onAction="#goForward">
+                    <HBox.margin>
+                        <Insets top="9" bottom="9"/>
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="navButtonRefresh" styleClass="nav-button" text="↻" onAction="#refreshPage">
+                    <HBox.margin>
+                        <Insets top="9" bottom="9" right="10"/>
+                    </HBox.margin>
+                </Button>
+            </HBox>
+            <TextField fx:id="urlFieldTop" styleClass="url-field" promptText="Enter URL or search..." HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets top="9" bottom="9"/>
+                </HBox.margin>
+            </TextField>
+            <Button fx:id="goButton" styleClass="go-button" text="Go" onAction="#onGoButtonClick">
+                <HBox.margin>
+                    <Insets top="9" bottom="9" left="10"/>
+                </HBox.margin>
+            </Button>
+            <Region HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets left="10" right="10"/>
+                </HBox.margin>
+            </Region>
+            <Button fx:id="hideUIButton" text="◨" onAction="#onHideUIButtonClick" styleClass="hide-ui-button">
+                <HBox.margin>
+                    <Insets top="9" bottom="9" right="15"/>
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </top>
+    
+    <!-- Left Sidebar for Tabs and Controls -->
+    <left>
+        <VBox fx:id="sidebar" styleClass="sidebar" spacing="10" prefWidth="300">
+            <FlowPane fx:id="pinnedTabsContainer" styleClass="pinned-tabs-container" prefWidth="200" prefHeight="100" hgap="10" vgap="10" />
+            <Button fx:id="tabControl" styleClass="tab-control" text="+" onAction="#onNewTabClick"/>
+            <ListView fx:id="tabsList" styleClass="tab-list" VBox.vgrow="ALWAYS"/>
+
+            <!-- Resize Handle -->
+            <Rectangle fx:id="resizeHandle" styleClass="resize-handle" 
+                       onMouseDragged="#onSidebarResize" onMousePressed="#onResizeHandlePressed"/>
+        </VBox>
+    </left>
+    
+    <!-- Main Content -->
+    <center>
+        <StackPane fx:id="browserContent" styleClass="browser-content">
+            <WebView fx:id="webView" styleClass="web-view"/>
+        </StackPane>
+    </center>
+</BorderPane>

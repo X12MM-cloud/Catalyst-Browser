@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.zetax.zetabrowser.SettingsController">
+    <content>
+        <TabPane fx:id="settingsTabPane" side="TOP">
+            <!-- Profile Tab -->
+            <Tab text="Profile">
+                <content>
+                    <GridPane padding="20" hgap="10" vgap="10">
+                        <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField promptText="Full Name" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField promptText="Email" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </content>
+            </Tab>
+            <!-- Billing Tab -->
+            <Tab text="Billing">
+                <content>
+                    <GridPane padding="20" hgap="10" vgap="10">
+                        <Label text="Card Holder Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField promptText="Card Holder Name" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="Card Number:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField promptText="Card Number" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </content>
+            </Tab>
+        </TabPane>
+    </content>
+</DialogPane> 
