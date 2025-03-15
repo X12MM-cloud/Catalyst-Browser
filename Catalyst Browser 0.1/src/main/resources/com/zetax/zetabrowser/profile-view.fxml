@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.zetax.zetabrowser.ProfileViewController"
+      styleClass="profile-window" maxWidth="550" maxHeight="650">
+    <VBox spacing="25" alignment="CENTER" styleClass="profile-window">
+        <padding>
+            <Insets top="30" right="30" bottom="30" left="30"/>
+        </padding>
+
+        <VBox spacing="10" VBox.vgrow="ALWAYS" styleClass="profile-list-container">
+            <Label text="Available Profiles" styleClass="section-header"/>
+            <HBox/>
+            
+            <ListView fx:id="profileListView" VBox.vgrow="ALWAYS" styleClass="profile-list" minHeight="250"/>
+        </VBox>
+
+        <!-- Theme Toggle -->
+        <HBox spacing="10" alignment="CENTER">
+            <CheckBox fx:id="darkModeCheckBox" text="Dark Mode" onAction="#onThemeChange" 
+                      selected="true" styleClass="theme-toggle"/>
+        </HBox>
+
+        <!-- Action Buttons -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="New Profile" onAction="#createNewProfile" styleClass="profile-button, new-profile-button">
+                <graphic>
+                    <Text text="+" styleClass="button-icon"/>
+                </graphic>
+            </Button>
+            
+            <Button text="Continue" onAction="#continueWithProfile" styleClass="profile-button, continue-button">
+                <graphic>
+                    <Text text="→" styleClass="button-icon"/>
+                </graphic>
+            </Button>
+        </HBox>
+    </VBox>
+</StackPane>

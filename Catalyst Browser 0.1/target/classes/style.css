@@ -1,0 +1,29 @@
+/* AI Features Styling */
+.ai-features-container {
+    -fx-padding: 10px;
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px 0 1px 0;
+}
+
+.ai-section-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 5px 0;
+}
+
+.ai-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+}
+
+.ai-button:hover {
+    -fx-background-color: #45a049;
+}
+
+.ai-status-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2196F3;
+} 
